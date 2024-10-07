@@ -1,0 +1,58 @@
+
+
+<div class="container">
+  <h1>Employee Attendance Records</h1>
+  
+  <!-- Search bar and date selector -->
+  <div class="row">
+    <div class="col-md-6">
+      <input 
+        type="text" 
+        class="form-control" 
+        placeholder="Enter Employee ID" 
+        [(ngModel)]="employeeId" 
+        (input)="onSearch()" />
+    </div>
+    <div class="col-md-6">
+      <input 
+        type="date" 
+        class="form-control" 
+        [(ngModel)]="selectedDate" 
+        (change)="onSearch()" />
+    </div>
+  </div>
+  
+  <br>
+
+
+
+
+
+
+
+
+
+
+<!-- showattendance.component.html -->
+<div class="container">
+    <h1>Employee Attendance Records</h1>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Status</th>
+          <th>Date and Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let record of attendanceRecords">
+          <td>{{ record.employeeId }}</td>
+          <td>{{ record.employeeName}}</td> 
+          <td>{{ record.status }}</td>
+          <td>{{ record.timestamp }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
